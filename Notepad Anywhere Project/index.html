@@ -1,0 +1,19 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <link rel="stylesheet" type="text/css" href="styles.css"/>
+    <title>Notepad Anywhere</title>
+</head>
+<body>
+    <input id="docs" onchange="open_document(this)" type="file" placeholder="Document URL"></input>
+    <button onclick="save_button()">Save</button>
+    <button onclick="new_button()">New</button>
+    <a id="save_link"></a>
+    <p>Notepad Anywhere</p>
+    <br>
+    <br>
+    <textarea id="editor">Hello World</textarea>
+    <script src="javascript.js"></script>
+</body>
+</html>

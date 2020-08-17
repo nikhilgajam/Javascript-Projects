@@ -1,0 +1,64 @@
+body{
+
+    background: linear-gradient(to right, rgb(65, 40, 111), rgb(240, 140, 120));
+    color: white;
+
+}
+
+#all{
+
+    display: block;
+    /* margin-left: auto;
+    margin-right: auto; */
+    width: 22em;
+    background: rgba(65, 40, 111, 0.3);
+    margin: auto;
+
+}
+
+#buttons{
+    
+    text-align: center;
+
+}
+
+button{
+
+    width: 80px;
+    height: 80px;
+    margin-top: 4px;
+    font-size: medium;
+    text-align: center;
+
+}
+
+.button{
+
+    color: wheat;
+    border: none;
+    font-size: 25px;
+    background-color: rgba(65, 40, 111, 0.6);
+    outline: none; /* Removes the outline when clicked */
+
+}
+
+.button:hover{
+    background-color: rgba(65, 40, 111, 1);
+}
+
+#show{
+
+    text-align: right;
+    padding: 5px;
+    font-size: 25px;
+
+}
+
+h1{
+
+    font-size: 50px;
+    text-align: right;
+    padding-left: 7px;
+    padding-right: 7px;
+    
+}

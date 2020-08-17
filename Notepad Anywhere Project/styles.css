@@ -1,0 +1,31 @@
+*{
+    background: rgb(53, 54, 58);
+    color: rgb(218, 220, 224);
+}
+
+input{
+    background: rgb(158, 158, 158);
+}
+
+textarea{
+    padding-left: 6px;
+    width: 99%;
+    height: 89vh;
+    font-size: 120%;
+    resize: none;
+    outline: none;
+}
+
+p{
+    display: inline;
+    padding-left: 125vh;
+    font-family: Rockwell;
+}
+
+a{
+    display: inline;
+}
+
+input{
+    text-align: middle;
+}
