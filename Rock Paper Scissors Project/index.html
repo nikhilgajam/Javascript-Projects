@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Rock Paper Scissors</title>
+    <link rel="stylesheet" type="text/css" href="style.css">
+
+</head>
+
+<body>
+
+    <h1>Rock Paper Scissors</h1>
+
+    <p id="player_score" style="text-align: center;">Player: 0 &emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp; Computer: 0</p>
+
+    <div style="text-align: center;">
+        <textarea disabled name="display" id="display" cols="80" rows="20"></textarea>
+    </div>
+
+    <br>
+
+    <div class="buttons" style="text-align: center;">
+        <button onclick="button_pressed('Rock')">&nbsp;Rock&nbsp;&nbsp;</button>
+        <button onclick="button_pressed('Paper')">&nbsp;Paper&nbsp;</button>
+        <button onclick="button_pressed('Scissors')">Scissors</button>
+        <br>
+        <button onclick="done_pressed()">&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;Done&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;</button>
+    </div>
+
+    <script src="script.js"></script>
+
+    <audio id="tie" src="sounds/Tie.mp3"></audio>
+    <audio id="you_point" src="sounds/You_point.mp3"></audio>
+    <audio id="comp_point" src="sounds/Computer_point.mp3"></audio>
+    <audio id="you_won" src="sounds/You_won.mp3"></audio>
+    <audio id="comp_won" src="sounds/Computer_won.mp3"></audio>
+    
+</body>
+
+</html>

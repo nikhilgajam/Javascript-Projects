@@ -1,0 +1,71 @@
+body{
+
+    background: linear-gradient(to right, green, rgb(49, 49, 145));
+    color: white;
+
+}
+
+h1{
+    text-align: center;
+    font-family: Pristina;
+    font-size: 2.65em;
+}
+
+textarea{
+    background: rgb(19, 11, 32);
+    color: white;
+    resize: none;
+    font-size: 1.045em;
+    padding: 4px;
+}
+
+button{
+    background-color: #065508; /* Green */
+    font-family: monospace;
+    border: none;
+    color: white;
+    padding: 16px 32px;
+    text-align: center;
+    text-decoration: none;
+    display: inline-block;
+    font-size: 16px;
+    margin: 4px 2px;
+    transition-duration: 0.4s;
+    cursor: pointer;
+    background-color: rgb(57, 27, 85); 
+    color: white; 
+    border: 2px solid #4CAF50;
+}
+
+button:hover {
+    background-color: #4CAF50;
+    font-family: monospace;
+    color: white;
+}
+
+p{
+    font-family: monospace;
+    font-size: 20px;
+}
+
+/* \___ Scroll Bar ___/ */
+
+/* width */
+::-webkit-scrollbar {
+    width: 10px;
+  }
+  
+  /* Track */
+  ::-webkit-scrollbar-track {
+    background: #f1f1f1; 
+  }
+   
+  /* Handle */
+  ::-webkit-scrollbar-thumb {
+    background: #888; 
+  }
+  
+  /* Handle on hover */
+  ::-webkit-scrollbar-thumb:hover {
+    background: #555; 
+  }
