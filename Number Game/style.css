@@ -1,0 +1,110 @@
+body{
+
+    background: linear-gradient(to right, rgb(65, 40, 111), rgb(240, 140, 120));
+    color: white;
+    font-family: 'Courier New', Courier, monospace;
+
+}
+
+h1{
+
+    font-size: 5em;
+    font-family: pristina;
+
+}
+
+
+#all{
+
+    display: block;
+    margin-left: auto;
+    margin-right: auto;
+    width: 40em;
+    background: rgba(65, 40, 111, 0.3);
+    margin: auto;
+    text-align: center;
+
+}
+
+#score{
+
+    font-size: 25px;
+
+}
+
+#ques{
+
+    font-size: 3.5em;
+
+}
+
+#ques_div{
+
+    display: inline-block;
+
+}
+
+#ans_box{
+
+    font-family: 'Courier New', Courier, monospace;
+    height:60pt;
+    width:100pt;
+    font-size:50px;
+    outline-width: 0;
+
+}
+
+#display{
+
+    font-size: 2em;
+
+}
+
+button{
+
+    background-color: rgb(240, 140, 120);
+    font-family: monospace;
+    border: none;
+    color: white;
+    padding: 10px 32px;
+    text-align: center;
+    text-decoration: none;
+    display: inline-block;
+    font-size: 16px;
+    margin: 4px 2px;
+    transition-duration: 0.4s;
+    cursor: pointer;
+    background-color: rgb(57, 27, 85); 
+    color: white; 
+    border: 2px solid rgb(240, 140, 120);
+
+}
+
+button:hover {
+
+    background-color: rgb(202, 126, 111);
+    font-family: monospace;
+    color: white;
+
+}
+
+#range_box{
+
+    font-family: 'Courier New', Courier, monospace;
+    width:50pt;
+    font-size:20px;
+    outline-width: 0;
+
+}
+
+/* Removing number input spin box in chrome */
+input::-webkit-outer-spin-button,
+input::-webkit-inner-spin-button {
+    -webkit-appearance: none;
+    margin: 0;
+}
+
+/* Removing number input spin box in mozilla */
+input[type=number] {
+    -moz-appearance: textfield;
+}
