@@ -1,5 +1,7 @@
 # Knowledge Check React Project
 
+URL: https://knowledge-check-react.vercel.app/
+
 This project contains React + Vite with HMR and some ESLint rules.
 
 Currently, two official plugins are available:
