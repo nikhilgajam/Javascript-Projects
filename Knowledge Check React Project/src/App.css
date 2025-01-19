@@ -1,0 +1,148 @@
+body {
+  margin: 0;
+  padding: 1em;
+  background-color: #242424;
+  color-scheme: light dark;
+  color: rgba(255, 255, 255, 0.83);
+  font-family: Inter, Helvetica, sans-serif, Arial, monospace, system-ui, Avenir;
+  text-align: center;
+}
+
+header {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  margin-bottom: 2em;
+  padding: 1em;
+  background-color: rgb(23, 19, 19);
+  border-radius: 0.6em;
+}
+
+.header-group {
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
+  align-items: center;
+  margin-bottom: 0.6em;
+}
+
+button,
+select {
+  border-radius: 8px;
+  border: 1px solid transparent;
+  padding: 0.6em 1.2em;
+  font-size: 1em;
+  font-weight: 500;
+  font-family: inherit;
+  background-color: #1a1a1a;
+  cursor: pointer;
+  transition: border-color 0.25s;
+  box-shadow: 0 0 0.3em #525252aa;
+}
+
+button:hover,
+select:hover {
+  border-color: #646cff;
+}
+
+button::selection,
+select::selection {
+  background-color: #646cff;
+}
+
+select {
+  padding: 0.1em;
+  font-size: 1em;
+  margin: 0.6em;
+}
+
+button:focus,
+button:focus-visible,
+select:focus,
+select:focus-visible {
+  outline: 4px auto #646cff;
+}
+
+input[type="radio"]:focus,
+input[type="radio"]:focus-visible {
+  outline: 4px auto #646cff;
+}
+
+.card-list {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
+  align-items: center;
+  gap: 1.4em;
+  row-gap: 1em;
+}
+
+.card {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  padding: 1em;
+  position: relative;
+  align-items: left;
+  box-shadow: 0 0 1em #525252aa;
+  background: black;
+  border-radius: 0.6em;
+  transition: transform 0.3s ease-in, filter 0.3s ease-in;
+  text-align: left;
+  cursor: default;
+}
+
+.card:hover {
+  transform: translateY(-2px);
+  filter: drop-shadow(0 0 1em #646cffaa);
+}
+
+.card-question {
+  font-size: 1.2em;
+  font-weight: 500;
+}
+
+.card-options {
+  margin-top: 0.1em;
+}
+
+ul {
+  list-style-type: none;
+  padding-left: 0.2em;
+}
+
+li {
+  padding: 0.1em;
+}
+
+.card-correct {
+  background-color: rgba(13, 77, 20, 0.6);
+  color: grey;
+}
+
+.card-incorrect {
+  background-color: rgba(135, 17, 17, 0.6);
+  color: grey;
+}
+
+.header-quote {
+  font-size: 0.9em;
+  font-style: italic;
+  font-weight: 500;
+  margin: 0.6em;
+  margin-top: 1em;
+}
+
+.header-error-msg {
+  margin-top: 1.8em;
+  color: rgb(189, 0, 0);
+}
+
+.quote {
+  margin-left: 1em;
+  margin-right: 1em;
+}
+
+.correct-tick {
+  font-size: 1.2em;
+  /* color: rgba(13, 77, 20, 0.6); */
+}
