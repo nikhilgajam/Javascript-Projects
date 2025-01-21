@@ -2,7 +2,7 @@ import { useEffect, useRef, useState } from 'react';
 import localStorageApi from '../localStoreApi'
 import '../App.css'
 
-export default function Header({ categoriesList, onSubmit, questionsSize, quote, errorMessage }) {
+export default function Header({ categoriesList, onSubmit, quote, errorMessage }) {
   const [correctScore, setCorrectScore] = useState(localStorageApi.getCorrectScore())
   const [incorrectScore, setIncorrectScore] = useState(localStorageApi.getIncorrectScore())
   const categoryRef = useRef()
