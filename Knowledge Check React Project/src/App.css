@@ -1,11 +1,13 @@
-/* Importing Google Fonts Inter */
+/* 
+If you want to import Google Fonts need to use this:
 @import url('https://fonts.googleapis.com/css2?family=Inter:ital,opsz,wght@0,14..32,100..900;1,14..32,100..900&display=swap');
+*/
 
 body {
   margin: 0;
   padding: 1em;
   background-color: #242424;
-  color-scheme: light dark;
+  color-scheme: only dark;
   color: rgba(255, 255, 255, 0.83);
   font-family: Inter, Helvetica, sans-serif, Arial, monospace, system-ui, Avenir;
   text-align: center;
