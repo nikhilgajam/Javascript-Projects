@@ -1,10 +1,10 @@
 import { useEffect, useRef, useState } from 'react';
-import localStorageApi from '../localStoreApi'
+import storageApi from '../storageApi'
 import '../App.css'
 
 export default function Header({ categoriesList, onSubmit, quote, errorMessage }) {
-  const [correctScore, setCorrectScore] = useState(localStorageApi.getCorrectScore())
-  const [incorrectScore, setIncorrectScore] = useState(localStorageApi.getIncorrectScore())
+  const [correctScore, setCorrectScore] = useState(storageApi.getCorrectScore())
+  const [incorrectScore, setIncorrectScore] = useState(storageApi.getIncorrectScore())
   const categoryRef = useRef()
   const difficultyRef = useRef()
   const sizeRef = useRef()
@@ -12,12 +12,15 @@ export default function Header({ categoriesList, onSubmit, quote, errorMessage }
   const sizeList = [{ id: 50, name: '50' }, { id: 25, name: '25' }, { id: 10, name: '10' }, { id: 5, name: '5' }, { id: 1, name: '1' }]
 
   useEffect(() => {
-    const interval = setInterval(() => {
-      setCorrectScore(localStorageApi.getCorrectScore());
-      setIncorrectScore(localStorageApi.getIncorrectScore());
-    }, 1000); // Check for updates every second
+    const onStorageChange = () => {
+      setCorrectScore(storageApi.getCorrectScore());
+      setIncorrectScore(storageApi.getIncorrectScore());
+    };
 
-    return () => clearInterval(interval); // Cleanup interval on component unmount
+    // Binding onStorageChange function with the event
+    window.addEventListener(storageApi.getStorageEventConstant(), onStorageChange)
+
+    return () => window.removeEventListener(storageApi.getStorageEventConstant(), onStorageChange) // Cleanup
   }, []);
 
   function handleSubmit(e) {
@@ -28,7 +31,7 @@ export default function Header({ categoriesList, onSubmit, quote, errorMessage }
       category: categoryRef.current.value,
     }
 
-    const difficulty = difficultyRef.current.value;
+    const difficulty = difficultyRef.current.value
     if (difficulty !== 'any') {
       params['difficulty'] = difficulty
     }
@@ -66,7 +69,7 @@ export default function Header({ categoriesList, onSubmit, quote, errorMessage }
         </div>
 
         <div className='header-score'>
-          <span>{`High Score: ${localStorageApi.getHighScore()}`}</span>
+          <span>{`High Score: ${storageApi.getHighScore()}`}</span>
           <br />
           <span>{`(${correctScore}/${incorrectScore})`}</span>
         </div>
@@ -76,12 +79,13 @@ export default function Header({ categoriesList, onSubmit, quote, errorMessage }
           <div className='quote'>
             <span>{quote.content}</span>
             <br />
-            <span>- {quote.author}</span>
+            <span style={{ "fontWeight": "bold" }}>- {quote.author}</span>
           </div>
         </div>
 
-        { errorMessage && <div className='header-error-msg'>
-          <span style={{textDecoration: "underline"}}>Error</span>: {errorMessage}
+        {errorMessage && <div className='header-error-msg'>
+          <span style={{ textDecoration: "underline", fontWeight: "bold" }}
+          >Error</span><span>: {errorMessage}</span>
         </div>}
       </form>
     </header>

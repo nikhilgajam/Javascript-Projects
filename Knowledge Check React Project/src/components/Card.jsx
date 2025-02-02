@@ -1,26 +1,34 @@
-
 import { useEffect, useState } from 'react'
-import localStoreApi from '../localStoreApi'
+import storageApi from '../storageApi'
 import '../App.css'
 
-export default function Card({ card }) {
+const initCard = {
+  id: 0,
+  index: 0,
+  question: '',
+  options: [],
+  correct_answer: '',
+  isError: false,
+}
+
+export default function Card({ card = initCard }) {
   const [answerState, setAnswerState] = useState('')
   const [cursor, setCursor] = useState('pointer')
 
   useEffect(() => {
     if (answerState === 'card-correct') {
-      const correctScore = localStoreApi.getCorrectScore() + 1
-      const highScore = localStoreApi.getHighScore()
+      const correctScore = storageApi.getCorrectScore() + 1
+      const highScore = storageApi.getHighScore()
 
-      localStoreApi.setCorrectScore(correctScore)
+      storageApi.setCorrectScore(correctScore)
 
       if (correctScore > highScore) {
-        localStoreApi.setHighScore(correctScore)
+        storageApi.setHighScore(correctScore)
       }
     } else if (answerState === 'card-incorrect') {
-      const correctScore = localStoreApi.getIncorrectScore() + 1
+      const correctScore = storageApi.getIncorrectScore() + 1
 
-      localStoreApi.setIncorrectScore(correctScore)
+      storageApi.setIncorrectScore(correctScore)
     }
   }, [answerState])
 
@@ -52,12 +60,12 @@ export default function Card({ card }) {
                     value={option}
                     onClick={handleClick}
                     disabled={answerState === '' ? false : true}
-                    style={{cursor}}
+                    style={{ cursor }}
                   />
                   &nbsp;
-                  <label 
+                  <label
                     htmlFor={option + card.id}
-                    style={{cursor}}
+                    style={{ cursor }}
                   >{option}</label>
                   &nbsp;
                   {answerState === 'card-incorrect' && option === card.correct_answer && <span className='correct-tick'>&#10004;</span>}

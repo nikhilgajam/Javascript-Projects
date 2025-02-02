@@ -1,7 +1,8 @@
 import { useEffect, useState } from 'react'
 import CardList from './components/CardList'
-import localStoreApi from './localStoreApi'
+import storageApi from './storageApi'
 import Header from './components/Header'
+import ScrollToTopButton from './components/ScrollToTopButton'
 import axios from 'axios'
 import './App.css'
 
@@ -16,10 +17,10 @@ const initData = [
 ]
 
 const triviaDBErrorCodes = {
-  1: "No Results. Could not return results. The API doesn't have enough questions for your query.",
+  1: "No Results. Could not return results. The API doesn't have enough questions for your query. Try Less Number of Questions.",
   2: "Invalid Parameter. Contains an invalid parameter. Arguements passed in aren't valid",
   3: "Token Not Found. Session Token does not exist.",
-  4: "Token Empty Session. Token has returned all possible questions for the specified query. Resetting the Token is necessary.",
+  4: "Token Empty Session. Token has returned all possible questions for the specified query. Try Less Number of Questions or reload the page to reset token.",
   5: "Rate Limit. Too many requests have occurred. Each IP can only access the API once every 5 seconds.",
 }
 
@@ -62,6 +63,7 @@ function App() {
   const [quote, setQuote] = useState('')
   const [categories, setCategories] = useState([{ id: 1, name: 'Loading...' }])
   const [errorMessage, setErrorMessage] = useState('')
+  const [sessionToken, setSessionToken] = useState(null)
 
   async function getCategories() {
     const url = 'https://opentdb.com/api_category.php'
@@ -70,14 +72,30 @@ function App() {
     setCategories(parsedCategories)
   }
 
+  async function getSessionToken() {
+    const url = 'https://opentdb.com/api_token.php?command=request'
+    const response = await requestData(url)
+    const token = response?.data?.token
+
+    if (response.data.response_code === 0)
+      setSessionToken(token)
+    else
+      setSessionToken(null)
+  }
+
   async function getQuestions(params) {
+    if (sessionToken && params?.amount < 25) {
+      params['token'] = sessionToken
+    }
+
     const url = 'https://opentdb.com/api.php'
     const response = await requestData(url, params)
 
     let responseCode = response?.data?.response_code
 
-    responseCode = response?.data?.response_code
-    if (responseCode > 1 || response.error) {
+    if (response.status < 300) {
+      responseCode = response?.data?.response_code
+    } else {
       responseCode = response?.error?.response?.data?.response_code
     }
 
@@ -85,11 +103,11 @@ function App() {
       setErrorMessage(triviaDBErrorCodes[responseCode])
       setData((previousData) => previousData)
     } else {
-      setErrorMessage('')
+      setErrorMessage(null)
       setData(() => parseQuestions(response.data.results))
 
-      localStoreApi.setCorrectScore(0)
-      localStoreApi.setIncorrectScore(0)
+      storageApi.setCorrectScore(0)
+      storageApi.setIncorrectScore(0)
     }
   }
 
@@ -111,11 +129,15 @@ function App() {
 
   useEffect(() => {
     const params = {
-      amount: 50,
+      amount: 50
     }
-    getCategories()
-    getQuestions(params)
     getQuote()
+    getCategories()
+    getSessionToken()
+    getQuestions(params)
+
+    // This line will disable eslint warning
+    // eslint-disable-next-line react-hooks/exhaustive-deps
   }, [])
 
   return (
@@ -127,9 +149,12 @@ function App() {
         onSubmit={handleSubmit}
         errorMessage={errorMessage}
       />
+
       <div className='container'>
         <CardList cards={data} />
       </div>
+
+      <ScrollToTopButton />
     </>
   )
 }
