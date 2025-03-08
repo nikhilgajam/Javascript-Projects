@@ -4,8 +4,6 @@ const app = express();
 const { createQueue, createChannel } = require("./messenger");
 const {v4: uuidv4} = require("uuid");
 
-
-
 const replyToQueue=`abc${os.hostname()}:hello:${process.pid}`;
 console.log("Creating queue", replyToQueue);
 const eventQueue = "events_hello";
