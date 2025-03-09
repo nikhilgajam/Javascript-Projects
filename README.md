@@ -14,5 +14,5 @@ This repository contains Javascript projects
 - Rock Paper Scissors Project: https://nikhilgajam.github.io/Javascript-Projects/Rock%20Paper%20Scissors%20Project/
 - Server Node JS Project: Download and run in your local
 - Simple JSDos Project: https://nikhilgajam.github.io/Javascript-Projects/Simple%20JSDos%20Project/
-- Time Table Project: https://nikhilgajam.github.io/Javascript-Projects/Time%20Table%20Project/time%20table/
+- Time Table Project: https://nikhilgajam.github.io/Javascript-Projects/Time%20Table%20Project/time%20table
 - ...
