@@ -15,4 +15,6 @@ This repository contains Javascript projects
 - Server Node JS Project: Download and run in your local
 - Simple JSDos Project: https://nikhilgajam.github.io/Javascript-Projects/Simple%20JSDos%20Project
 - Time Table Project: https://nikhilgajam.github.io/Javascript-Projects/Time%20Table%20Project/time%20table
+- Todo App NextJS: Download and run in your local
+- Todo App React: https://todo-reactjs-app.vercel.app
 - ...
