@@ -1,0 +1,161 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Time Table</title>
+    <style>
+        body{
+            background: linear-gradient(to right, rgb(113, 17, 192), wheat);
+        }
+
+        h1{
+            text-align: center;
+            font-family: Pristina;
+            font-size: 56px;
+        }
+
+        p{
+            text-align: center;
+            font-family: monospace;
+            font-size: 25px;
+        }
+
+        .break{
+            padding: 0 15px;
+        }
+
+        th:hover{
+            background-color: rgba(47, 189, 47, 0.8);
+            color: wheat;
+        }
+
+        td:hover{
+            background-color: rgba(202, 235, 202, 0.8);
+            color: darkgreen;
+        }
+
+        th{
+            padding: 10px;
+            background-color: rgba(47, 189, 47, 0.3);
+            border: 1px solid rgba(47, 189, 47, 0.7);
+        }
+
+        td{
+            padding: 6px;
+            background-color: rgba(202, 235, 202, 0.3);
+            border: 1px solid rgba(47, 189, 47, 0.7);
+        }
+
+        table{
+            text-align: center;
+            font-family: monospace;
+            font-size: 20px;
+            border: 6px solid black;
+        }
+
+        ul{
+            color:wheat;
+        }
+
+    </style>
+</head>
+<body>
+    <h1>Time Table</h1>
+    <p>CSE C</p>
+
+    <table align="center">
+
+        <tr>
+            <th>Day/Time</th>
+            <th>9:10-10:00 AM</th>
+            <th class="break" rowspan="7">B<br>R<br>E<br>A<br>K</th>
+            <th>10:10-11:00 AM</th>
+            <th class="break" rowspan="7">B<br>R<br>E<br>A<br>K</th>
+            <th>11:10-12:00 PM</th>
+            <th class="break" rowspan="7">B<br>R<br>E<br>A<br>K</th>
+            <th>12:10-1:00 PM</th>
+            <th class="break" rowspan="7">B<br>R<br>E<br>A<br>K</th>
+            <th>1:30-3:30 PM</th>
+        </tr>
+
+        <tr>
+            <th>Monday</th>
+            <td onclick="displaydata('Srujana')">ES</td>
+            <td onclick="displaydata('Durga Bhavani')">DM</td>
+            <td onclick="displaydata('Rajeshwari')">PP</td>
+            <td onclick="displaydata('Jyoti')">DS</td>
+            <td onclick="displaydata('According To Subject')">PP LAB/ DS LAB/ OOP LAB</td>
+        </tr>
+
+        <tr>
+            <th>Tuesday</th>
+            <td>P&S</td>
+            <td>PP</td>
+            <td>DM</td>
+            <td>DLD</td>
+            <!-- <td>PP LAB/ DS LAB/ OOP LAB</td> -->
+        </tr>
+
+        <tr>
+            <th>Wednesday</th>
+            <td>DM</td>
+            <td>DS</td>
+            <td>DLD</td>
+            <td>OOP</td>
+            <!-- <td>PP LAB/ DS LAB/ OOP LAB</td> -->
+        </tr>
+
+        <tr>
+            <th>Thursday</th>
+            <td>P&S</td>
+            <td>DLD</td>
+            <td>ES</td>
+            <td>OOP</td>
+            <td>PP LAB/ DS LAB/ OOP LAB</td>
+        </tr>
+
+        <tr>
+            <th>Friday</th>
+            <td>DS</td>
+            <td>P&S</td>
+            <td>PP</td>
+            <td>DLD</td>
+            <!-- <td>PP LAB/ DS LAB/ OOP LAB</td> -->
+        </tr>
+
+        <tr>
+            <th>Saturday</th>
+            <td>P&S</td>
+            <td>OOP</td>
+            <td>DS</td>
+            <td>DM</td>
+            <!-- <td>PP LAB/ DS LAB/ OOP LAB</td> -->
+        </tr>
+
+
+    </table>
+
+    <p id="data"></p>
+
+    <br>
+
+    <ul>
+        <li>OOP - Raja Shekhar</li>
+        <li>DS - Jyoti</li>
+        <li>DM - Durga Bhavani</li>
+        <li>PP - Rajeshwari</li>
+        <li>P&S - Ramesh</li>
+        <li>ES - Srujana</li>
+        <li>DLD - Vinayasree</li>
+    </ul>
+
+    <script>
+
+        function displaydata(x){
+            document.getElementById("data").innerHTML = x
+        }
+
+    </script>
+    
+</body>
+</html>
