@@ -2,7 +2,7 @@
 This repository contains Javascript projects
 
 ## Projects and URL's:
-- Avengers Project: Download and open "Avengers" file in your local
+- Avengers Project: https://nikhilgajam.github.io/Javascript-Projects/Avengers%20Project
 - Basic Calculator Project: https://nikhilgajam.github.io/Javascript-Projects/Basic%20Calculator%20Project
 - Knowledge Check React Project: https://knowledge-check-react.vercel.app
 - Notepad Anywhere Project: https://nikhilgajam.github.io/Javascript-Projects/Notepad%20Anywhere%20Project

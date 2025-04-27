@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>AnuragBot</title>
+    <style>
+        body{
+            background-image: url("logo.jpeg");
+            background-repeat: no-repeat;
+            background-attachment: fixed;
+            background-position: 50%;
+            background-size: 50%;
+        }
+    </style>
+</head>
+<body>
+    <h1></h1>
+    <script>
+      window.watsonAssistantChatOptions = {
+          integrationID: "a79dbc65-71bc-493d-9aa6-b0c1d057a9b8", // The ID of this integration.
+          region: "eu-gb", // The region your integration is hosted in.
+          serviceInstanceID: "f8a767e2-dfb7-4f03-8dd0-f6ecd701b591", // The ID of your service instance.
+          onLoad: function(instance) { instance.render(); }
+        };
+      setTimeout(function(){
+        const t=document.createElement('script');
+        t.src="https://web-chat.global.assistant.watson.appdomain.cloud/loadWatsonAssistantChat.js";
+        document.head.appendChild(t);
+      });
+    </script>
+</body>
+</html>
